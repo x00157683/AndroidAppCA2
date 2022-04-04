@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/conor/ead2/ca2/AndroidAppCA2/app/src/main/res/layout/activity_base.xml" value="0.1" />
+        <entry key="..\:/Users/conor/ead2/ca2/AndroidAppCA2/app/src/main/res/layout/activity_main.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/conor/ead2/ca2/AndroidAppCA2/app/src/main/res/layout/content_main.xml" value="0.19662921348314608" />
+        <entry key="..\:/Users/conor/ead2/ca2/AndroidAppCA2/app/src/main/res/layout/fragment_first.xml" value="0.1" />
+        <entry key="..\:/Users/conor/ead2/ca2/AndroidAppCA2/app/src/main/res/layout/fragment_second.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/conor/ead2/ca2/AndroidAppCA2/app/src/main/res/layout/rowlayout.xml" value="0.17806484295845998" />
         <entry key="..\:/Users/marcl/Desktop/CollegeSem8/AndroidAppCA2/app/src/main/res/layout/activity_base.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/marcl/Desktop/CollegeSem8/AndroidAppCA2/app/src/main/res/layout/activity_main.xml" value="0.11302083333333333" />
       </map>

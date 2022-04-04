@@ -7,8 +7,9 @@ import android.widget.ProgressBar;
 
 import androidx.annotation.ContentView;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.solver.state.State;
+//import androidx.constraintlayout.solver.state.State;
 import androidx.constraintlayout.widget.ConstraintLayout;
+
 
 public abstract class BaseActivity extends AppCompatActivity {
 
