@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET">
     </uses-permission>
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,6 +16,7 @@
         android:allowClearUserData="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.AndroidAppCA2">
+        <activity android:name=".DetailActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"
