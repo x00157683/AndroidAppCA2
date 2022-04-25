@@ -59,8 +59,9 @@ public class MainActivity extends AppCompatActivity {
                                 String type = jsonObject.getString("type");
                                 String image = jsonObject.getString("image");
                                 String restaurantId = jsonObject.getString("restaurantId");
+                                String tables = jsonObject.getString("tables");
 
-                                Restaurant restaurant = new Restaurant(name ,image, rating , type , restaurantId);
+                                Restaurant restaurant = new Restaurant(name ,image, rating , type , restaurantId,tables);
                                 restaurantList.add(restaurant);
                             } catch (JSONException e) {
                                 e.printStackTrace();

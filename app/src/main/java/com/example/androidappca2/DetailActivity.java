@@ -15,22 +15,25 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
 
-        ImageView imageView = findViewById(R.id.poster_image);
+        ImageView imageView = findViewById(R.id.image);
         TextView rating_tv = findViewById(R.id.mRating);
         TextView title_tv = findViewById(R.id.mRestaurant);
         TextView overview_tv = findViewById(R.id.mType);
+        TextView tables_tv = findViewById(R.id.mTables);
 
         Bundle bundle = getIntent().getExtras();
 
         String mTitle = bundle.getString("name");
-        String mPoster = bundle.getString("image");
-        String mtype = bundle.getString("type");
+        String mImage = bundle.getString("image");
+        String mType = bundle.getString("type");
         String mRating = bundle.getString("rating");
+        String mTables= bundle.getString("tables");
 
-        Glide.with(this).load(mPoster).into(imageView);
+        Glide.with(this).load(mImage).into(imageView);
         rating_tv.setText(mRating);
         title_tv.setText(mTitle);
-        overview_tv.setText(mtype);
+        overview_tv.setText(mType);
+        tables_tv.setText(mTables);
 
     }
 }

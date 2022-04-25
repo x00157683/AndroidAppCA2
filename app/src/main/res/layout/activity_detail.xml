@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/poster_image"
+        android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:scaleType="centerCrop"
@@ -44,7 +44,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/poster_image" />
+        app:layout_constraintTop_toBottomOf="@+id/image" />
 
     <TextView
         android:id="@+id/mType"
@@ -56,4 +56,15 @@
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mRating" />
+
+    <TextView
+        android:id="@+id/mTables"
+        android:layout_width="358dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="tables"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mType" />
 </androidx.constraintlayout.widget.ConstraintLayout>

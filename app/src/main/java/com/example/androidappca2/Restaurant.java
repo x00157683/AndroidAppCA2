@@ -9,12 +9,13 @@ public class Restaurant {
     private String restaurantId;
     private String tables;
 
-    public Restaurant(String name,String image ,String rating, String type, String restaurantId) {
+    public Restaurant(String name,String image ,String rating, String type, String restaurantId,String tables) {
         this.name = name;
         this.image = image;
         this.rating = rating;
         this.type = type;
         this.restaurantId = restaurantId;
+        this.tables = tables;
     }
 
     public String getName() {

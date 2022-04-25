@@ -40,6 +40,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
         holder.rating.setText(restaurant.getRating().toString());
         holder.name.setText(restaurant.getName());
         holder.type.setText(restaurant.getType());
+        //holder.tables.setText(restaurant.getType());
         Glide.with(context).load(restaurant.getImage()).into(holder.imageView);
         //holder.restaurantId.setText(restaurant.getRestaurantId().toString());
 
@@ -54,6 +55,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
                 bundle.putString("type" , restaurant.getType());
                 bundle.putString("image" , restaurant.getImage());
                 bundle.putString("restaurantId" , restaurant.getRestaurantId());
+                bundle.putString("tables" , restaurant.getTables());
 
                 intent.putExtras(bundle);
 
@@ -81,6 +83,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
             name = itemView.findViewById(R.id.restrant_name);
             rating = itemView.findViewById(R.id.rating);
             type = itemView.findViewById(R.id.type);
+            //tables = itemView.findViewById(R.id.tables);
             //restaurantId = itemView.findViewById(R.id.restaurantId);
             constraintLayout = itemView.findViewById(R.id.main_layout);
         }
