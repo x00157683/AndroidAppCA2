@@ -3,10 +3,7 @@ package com.example.androidappca2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -17,21 +14,21 @@ public class DetailActivity extends AppCompatActivity {
 
 
 
-        TextView rating_tv = findViewById(R.id.mRating);
-        TextView title_tv = findViewById(R.id.mTitle);
-        TextView overview_tv = findViewById(R.id.movervie_tv);
+        TextView rating = findViewById(R.id.mRating);
+        TextView restrant_name = findViewById(R.id.mRestrant);
+        TextView overview = findViewById(R.id.mType);
 
         Bundle bundle = getIntent().getExtras();
 
-        String mTitle = bundle.getString("name");
+        String mRestrant = bundle.getString("name");
 
         String mtype = bundle.getString("type");
         String mRating = bundle.getString("rating");
 
 
-        rating_tv.setText(mRating);
-        title_tv.setText(mTitle);
-        overview_tv.setText(mtype);
+        rating.setText(mRating);
+        restrant_name.setText(mRestrant);
+        overview.setText(mtype);
 
     }
 }

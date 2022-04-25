@@ -2,46 +2,22 @@ package com.example.androidappca2;
 
 import android.os.Bundle;
 
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.util.Log;
-import android.view.View;
-
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import com.example.androidappca2.databinding.ActivityMainBinding;
-
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.gson.*;
 import com.android.volley.*;
 import com.android.volley.toolbox.*;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.List;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -60,13 +36,16 @@ public class MainActivity extends AppCompatActivity {
         requestQueue = VolleySingleton.getmInstance(this).getRequestQueue();
 
         restaurantList = new ArrayList<>();
-        fetchMovies();
+        fetchRestaurant();
 
 
     }
 
-    private void fetchMovies() {
+    private void fetchRestaurant() {
 
+        //https://ca2webapi.azurewebsites.net/index.html
+        //private String SERVICE_URI = "https://ca2webapi.azurewebsites.net/api/restaurant/1";
+        //private String SERVICE_URI = "https://api.json-generator.com/templates/HFU7eby3ZcFn/data?access_token=52rthn9619pcl2s336ldt6t5729kzjkcmm8mox05";
         String url = "https://ca2webapi.azurewebsites.net/api/restaurant";
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,

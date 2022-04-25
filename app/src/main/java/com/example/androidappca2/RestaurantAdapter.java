@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.MovieHolder> {
+public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.RestaurantHolder> {
 
     private Context context;
     private List<Restaurant> restaurantList;
@@ -25,13 +25,13 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Mo
     }
     @NonNull
     @Override
-    public MovieHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RestaurantHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.rowlayout , parent , false);
-        return new MovieHolder(view);
+        return new RestaurantHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MovieHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RestaurantHolder holder, int position) {
 
         Restaurant restaurant = restaurantList.get(position);
         holder.rating.setText(restaurant.getRating().toString());
@@ -63,19 +63,19 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Mo
         return restaurantList.size();
     }
 
-    public class MovieHolder extends RecyclerView.ViewHolder{
+    public class RestaurantHolder extends RecyclerView.ViewHolder{
 
 
         TextView name , rating, type, restaurantId;
         ConstraintLayout constraintLayout;
 
-        public MovieHolder(@NonNull View itemView) {
+        public RestaurantHolder(@NonNull View itemView) {
             super(itemView);
 
 
-            name = itemView.findViewById(R.id.title_tv);
+            name = itemView.findViewById(R.id.restrant_name);
             rating = itemView.findViewById(R.id.rating);
-            type = itemView.findViewById(R.id.overview_tv);
+            type = itemView.findViewById(R.id.type);
             //restaurantId = itemView.findViewById(R.id.restaurantId);
             constraintLayout = itemView.findViewById(R.id.main_layout);
         }

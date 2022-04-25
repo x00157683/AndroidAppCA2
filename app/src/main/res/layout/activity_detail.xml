@@ -24,22 +24,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
-        android:text="rating_tv"
+        android:text="rating"
         android:textColor="@color/teal_700"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.035"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/mRestrant" />
 
     <TextView
-        android:id="@+id/mTitle"
+        android:id="@+id/mRestrant"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="movie"
+        android:text="restrant_name"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -47,12 +47,12 @@
         app:layout_constraintTop_toBottomOf="@+id/poster_image" />
 
     <TextView
-        android:id="@+id/movervie_tv"
+        android:id="@+id/mType"
         android:layout_width="358dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="description"
+        android:text="type"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mRating" />
