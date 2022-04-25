@@ -8,8 +8,10 @@ public class Restaurant {
     private String image;
     private String restaurantId;
     private String tables;
-    public Restaurant(String name, String rating, String type, String restaurantId) {
+
+    public Restaurant(String name,String image ,String rating, String type, String restaurantId) {
         this.name = name;
+        this.image = image;
         this.rating = rating;
         this.type = type;
         this.restaurantId = restaurantId;
@@ -55,17 +57,13 @@ public class Restaurant {
         this.tables = tables;
     }
 
-    public String toString()
-    {
-        return name + "\n" +  rating + "\n" + type ;
-    }
-
     public String getImage() {
         return image;
     }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
 
+    public String toString()
+    {
+        return name + "\n" +  rating + "\n" + type ;
+    }
 }

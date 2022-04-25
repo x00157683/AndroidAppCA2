@@ -29,18 +29,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         requestQueue = VolleySingleton.getmInstance(this).getRequestQueue();
+
         restaurantList = new ArrayList<>();
         fetchRestaurant();
+
+
     }
 
     private void fetchRestaurant() {
+
         String url = "https://ca2webapi.azurewebsites.net/api/restaurant";
 
-        //https://ca2webapi.azurewebsites.net/index.html        //private String SERVICE_URI = "https://ca2webapi.azurewebsites.net/api/restaurant/1";        //private String SERVICE_URI = "https://api.json-generator.com/templates/HFU7eby3ZcFn/data?access_token=52rthn9619pcl2s336ldt6t5729kzjkcmm8mox05";
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONArray>() {
                     @Override
@@ -50,17 +55,19 @@ public class MainActivity extends AppCompatActivity {
                             try {
                                 JSONObject jsonObject = response.getJSONObject(i);
                                 String name = jsonObject.getString("name");
-                                String rating = jsonObject.getString("rating");
+                                String rating = jsonObject.getString("rating") + " Stars";
                                 String type = jsonObject.getString("type");
-                                //String image = jsonObject.getString("image");
+                                String image = jsonObject.getString("image");
                                 String restaurantId = jsonObject.getString("restaurantId");
-                                Restaurant restaurant = new Restaurant(name , rating , type , restaurantId);
+
+                                Restaurant restaurant = new Restaurant(name ,image, rating , type , restaurantId);
                                 restaurantList.add(restaurant);
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
 
                             RestaurantAdapter adapter = new RestaurantAdapter(MainActivity.this , restaurantList);
+
                             recyclerView.setAdapter(adapter);
                         }
                     }
@@ -70,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+
         requestQueue.add(jsonArrayRequest);
     }
 }
