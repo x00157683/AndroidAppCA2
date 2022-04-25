@@ -5,15 +5,14 @@ public class Restaurant {
     private String name; //name
     private String rating; // location
     private String type;
+    private String image;
     private String restaurantId;
     private String tables;
-
     public Restaurant(String name, String rating, String type, String restaurantId) {
         this.name = name;
         this.rating = rating;
         this.type = type;
         this.restaurantId = restaurantId;
-
     }
 
     public String getName() {
@@ -59,6 +58,14 @@ public class Restaurant {
     public String toString()
     {
         return name + "\n" +  rating + "\n" + type ;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
 }

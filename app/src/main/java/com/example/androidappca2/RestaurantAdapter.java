@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,14 +20,15 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
     private Context context;
     private List<Restaurant> restaurantList;
 
-    public RestaurantAdapter(Context context , List<Restaurant> restaurantList){
+    public RestaurantAdapter(Context context, List<Restaurant> restaurantList) {
         this.context = context;
         this.restaurantList = restaurantList;
     }
+
     @NonNull
     @Override
     public RestaurantHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.rowlayout , parent , false);
+        View view = LayoutInflater.from(context).inflate(R.layout.rowlayout, parent, false);
         return new RestaurantHolder(view);
     }
 
@@ -37,25 +39,22 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
         holder.rating.setText(restaurant.getRating().toString());
         holder.name.setText(restaurant.getName());
         holder.type.setText(restaurant.getType());
+        //Glide.with(context).load(restaurant.getImage()).into(holder.imageView);
         //holder.restaurantId.setText(restaurant.getRestaurantId().toString());
-
         holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context , DetailActivity.class);
-
+                Intent intent = new Intent(context, DetailActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("name" , restaurant.getName());
-                bundle.putString("rating" , restaurant.getRating());
-                bundle.putString("type" , restaurant.getType());
-                bundle.putString("restaurantId" , restaurant.getRestaurantId());
-
+                bundle.putString("name", restaurant.getName());
+                bundle.putString("rating", restaurant.getRating());
+                bundle.putString("type", restaurant.getType());
+                //bundle.putString("poster" , restaurant.getImage());
+                bundle.putString("restaurantId", restaurant.getRestaurantId());
                 intent.putExtras(bundle);
-
                 context.startActivity(intent);
             }
         });
-
     }
 
     @Override
@@ -63,19 +62,19 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
         return restaurantList.size();
     }
 
-    public class RestaurantHolder extends RecyclerView.ViewHolder{
+    public class RestaurantHolder extends RecyclerView.ViewHolder {
 
 
-        TextView name , rating, type, restaurantId;
+        TextView name, rating, type, restaurantId;
+        ImageView imageView;
         ConstraintLayout constraintLayout;
 
         public RestaurantHolder(@NonNull View itemView) {
             super(itemView);
-
-
             name = itemView.findViewById(R.id.restrant_name);
             rating = itemView.findViewById(R.id.rating);
             type = itemView.findViewById(R.id.type);
+            //imageView = itemView.findViewById(R.id.imageview);
             //restaurantId = itemView.findViewById(R.id.restaurantId);
             constraintLayout = itemView.findViewById(R.id.main_layout);
         }
